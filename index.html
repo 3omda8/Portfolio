@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk:MORF,SHLN@17,42.3&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>My Portoflio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="nav-bar" class="display">My Portfolio</div>
+
+    <div class="container dispaly bg">
+      <div class="about display fade-in">
+        <h1>I'm Mohamed Emad</h1>
+        <h3>
+          Front-End developer with strong skills. Passionate about building web
+          UIs and thrives in collaborative environments. Fast learner excited to
+          contribute to innovative projects.
+        </h3>
+      </div>
+
+      <button class="btn display" onclick="toggle()">Skills</button>
+
+      <div class="skills">
+        <h2>Skills :</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>JQuery</li>
+          <li>React Js</li>
+        </ul>
+      </div>
+
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <div class="caption">Youtube(html-css)</div>
+          <a href="https://3omda8.github.io/youtube-html-css/"
+            ><img src="./1.png" style="width: 100%"
+          /></a>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <div class="caption">HTML-CSS-JavaScript</div>
+          <a href="https://3omda8.github.io/Drum-Kit/"
+            ><img src="./2.png" style="width: 100%"
+          /></a>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <div class="caption" style="text-align: center">
+            Pizza Menu(React JS)
+          </div>
+          <a href="https://3omda8.github.io/pizza-menu/"
+            ><img src="./3.png" style="width: 100%"
+          /></a>
+        </div>
+      </div>
+      <br />
+
+      <div class="move-dots" style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

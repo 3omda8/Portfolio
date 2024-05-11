@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How to Design Image Slider using jQuery ?</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .image-container .slide img {
+        width: 100%;
+        height: 300px;
+      }
+
+      /* Image-container design */
+      .image-container {
+        position: relative;
+        left: 70%;
+        max-width: 400px;
+        height: 300px;
+        margin-right: 20px;
+      }
+
+      .next {
+        right: 0;
+      }
+
+      /* Next and previous icon design */
+      .previous,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        padding: 10px;
+        margin-top: -25px;
+      }
+
+      .fa {
+        font-size: 32px;
+      }
+
+      .fa:hover {
+        transform: rotate(360deg);
+        transition: 1s;
+        color: white;
+      }
+
+      .footerdot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 4px;
+        background-color: #bbbbbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.5s ease;
+      }
+
+      .active,
+      .footerdot:hover {
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1 style="color: green">GeeksforGeeks</h1>
+
+      <b> How to code Image Slider using jQuery </b>
+
+      <br /><br />
+    </center>
+
+    <!-- Image container of the image slider -->
+    <div class="image-container">
+      <div class="slide">
+        <img
+          src="https://www.geeksforgeeks.org/wp-content/uploads/html-768x256.png"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.geeksforgeeks.org/wp-content/uploads/CSS-768x256.png"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.geeksforgeeks.org/wp-content/uploads/jquery-banner.png"
+        />
+      </div>
+
+      <!-- Next and Previous icon to change images -->
+        <div style="text-align: center; margin-top: -32px">
+          <span class="footerdot" onclick="activeSlide(1)"> </span>
+          <span class="footerdot" onclick="activeSlide(2)"> </span>
+          <span class="footerdot" onclick="activeSlide(3)"> </span>
+        </div>
+      </a>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      displaySlide(slideIndex);
+
+      function moveSlides(n) {
+        displaySlide((slideIndex += n));
+      }
+
+      function activeSlide(n) {
+        displaySlide((slideIndex = n));
+      }
+
+      /* Main function */
+      function displaySlide(n) {
+        let i;
+        let totalslides = document.getElementsByClassName("slide");
+
+        let totaldots = document.getElementsByClassName("footerdot");
+
+        if (n > totalslides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = totalslides.length;
+        }
+        for (i = 0; i < totalslides.length; i++) {
+          totalslides[i].style.display = "none";
+        }
+        for (i = 0; i < totaldots.length; i++) {
+          totaldots[i].className = totaldots[i].className.replace(
+            " active",
+            ""
+          );
+        }
+        totalslides[slideIndex - 1].style.display = "block";
+        totaldots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
